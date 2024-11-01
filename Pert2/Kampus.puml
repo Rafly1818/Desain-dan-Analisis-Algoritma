@@ -1,0 +1,24 @@
+@startuml pert2
+
+actor Mahasiswa as mhs
+actor Dosen as dsn
+
+package Kampus {
+    usecase "Pilih Mata Kuliah" as U1
+    usecase "Ruang Perkuliahan" as U2
+    usecase "Menerima Penjadwalan Perkuliahan" as U3
+    usecase "Jadwal Kuliah" as U4
+    usecase "Mengajar" as U5
+    usecase "Tolak Mengajar" as U6
+    usecase "Terima Mengajar" as U7
+}
+
+mhs --> U3
+mhs --> U1
+dsn --> U5
+U1 .> U2
+U1 .> U4
+dsn .> U6
+dsn .> U7
+
+@enduml
