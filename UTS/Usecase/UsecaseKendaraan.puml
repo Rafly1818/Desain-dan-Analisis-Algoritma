@@ -1,0 +1,46 @@
+@startuml Usecase
+left to right direction
+
+actor "Pemilik Kendaraan" as Owner
+actor "Admin" as Admin
+actor "Bengkel" as Workshop
+
+rectangle "Vehicle Service System" {
+  usecase "Pendaftaran Kendaraan" as UC1
+  usecase "Verifikasi Data Kendaraan" as UC2
+  usecase "Melihat Informasi Kendaraan" as UC3
+  usecase "Membuat Jadwal Servis" as UC4
+  usecase "Konfirmasi Jadwal Servis" as UC5
+  usecase "Melihat Riwayat Servis" as UC6
+
+  note right of UC1
+    Pemilik mendaftarkan kendaraan
+    ke sistem, Admin memverifikasi data
+  end note
+
+  note right of UC3
+    Pemilik dapat melihat detail kendaraan
+    dan riwayat servis
+  end note
+
+  note right of UC4
+    Pemilik membuat jadwal,
+    Admin/Bengkel mengkonfirmasi
+  end note
+}
+
+Owner --> UC1
+Owner --> UC3
+Owner --> UC4
+Owner --> UC6
+
+Admin --> UC2
+Admin --> UC5
+
+Workshop --> UC5
+
+UC1 ..> UC2 : <<include>>
+UC3 ..> UC6 : <<include>>
+UC4 ..> UC5 : <<include>>
+
+@enduml

@@ -1,0 +1,27 @@
+@startuml Flowchart 
+!define LIGHTGREEN
+!define LIGHTBLUE
+!$success = "#DFE1E6"
+
+title Flowchart Sistem Servis Kendaraan
+
+|Pemilik Kendaraan|
+start
+:Mendaftarkan Kendaraan;
+|#AntiqueWhite|Admin|
+:Menambahkan Data Kendaraan;
+|Pemilik Kendaraan|
+:Melihat Informasi Servis;
+:Membuat Jadwal Servis;
+|#AntiqueWhite|Admin/Bengkel|
+:Verifikasi Jadwal;
+if (Jadwal Disetujui?) then (ya)
+  :Konfirmasi ke Pemilik;
+else (tidak)
+  :Kirim Notifikasi Penolakan;
+  |Pemilik Kendaraan|
+  :Membuat Jadwal Ulang;
+endif
+stop
+
+@enduml
