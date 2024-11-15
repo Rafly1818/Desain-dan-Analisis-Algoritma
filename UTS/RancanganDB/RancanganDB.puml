@@ -1,0 +1,39 @@
+@startuml
+entity "Kendaraan" as Kendaraan {
+  +id: INT [PK]
+  +plat_nomor: VARCHAR
+  +merk: VARCHAR
+  +model: VARCHAR
+  +tahun: INT
+  +warna: VARCHAR
+  +pemilik_id: INT [FK]
+}
+
+entity "Pemilik" as Pemilik {
+  +id: INT [PK]
+  +nama: VARCHAR
+  +alamat: VARCHAR
+  +telepon: VARCHAR
+}
+
+entity "Servis" as Servis {
+  +id: INT [PK]
+  +kendaraan_id: INT [FK]
+  +tanggal_servis: DATE
+  +biaya: DECIMAL
+  +keterangan: TEXT
+}
+
+entity "Asuransi" as Asuransi {
+  +id: INT [PK]
+  +kendaraan_id: INT [FK]
+  +nomor_polis: VARCHAR
+  +provider: VARCHAR
+  +tanggal_mulai: DATE
+  +tanggal_akhir: DATE
+}
+
+Pemilik ||--o{ Kendaraan : "memiliki"
+Kendaraan ||--o{ Servis : "dijalani oleh"
+Kendaraan ||--o{ Asuransi : "memiliki polis"
+@enduml
