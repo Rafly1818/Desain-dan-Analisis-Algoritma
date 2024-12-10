@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use App\Models\Product;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,6 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call([VisitorsSeeder::class]);
         $this->call([BorrowingsSeeder::class]);
         $this->call([PermissionsSeeder::class]);
+        $this->call([ProductSeeder::class]);
     }
 
     private function seedUsers(): void
