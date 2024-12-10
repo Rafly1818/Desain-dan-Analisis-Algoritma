@@ -3,11 +3,15 @@
 namespace App\Filament\Admin\Resources;
 
 use App\Filament\Admin\Resources\BorrowingsResource\Pages;
+use App\Filament\Admin\Resources\BorrowingsResource\RelationManagers;
 use App\Models\Borrowings;
+use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class BorrowingsResource extends Resource
 {
@@ -19,7 +23,22 @@ class BorrowingsResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('book_id')
+                    ->required()
+                    ->numeric(),
+                Forms\Components\TextInput::make('visitor_id')
+                    ->required()
+                    ->numeric(),
+                Forms\Components\TextInput::make('name')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\DatePicker::make('borrow_date')
+                    ->required(),
+                Forms\Components\DatePicker::make('return_date')
+                    ->required(),
+                Forms\Components\TextInput::make('late_fees')
+                    ->required()
+                    ->numeric(),
             ]);
     }
 
@@ -27,7 +46,31 @@ class BorrowingsResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('book_id')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('visitor_id')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('name')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('borrow_date')
+                    ->date()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('return_date')
+                    ->date()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('late_fees')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //

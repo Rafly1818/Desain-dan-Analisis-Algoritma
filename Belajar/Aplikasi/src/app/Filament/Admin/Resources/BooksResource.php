@@ -3,11 +3,15 @@
 namespace App\Filament\Admin\Resources;
 
 use App\Filament\Admin\Resources\BooksResource\Pages;
+use App\Filament\Admin\Resources\BooksResource\RelationManagers;
 use App\Models\Books;
+use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class BooksResource extends Resource
 {
@@ -19,7 +23,18 @@ class BooksResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('title')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('author')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('publisher')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('available')
+                    ->required()
+                    ->maxLength(255),
             ]);
     }
 
@@ -27,7 +42,22 @@ class BooksResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('title')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('author')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('publisher')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('available')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
