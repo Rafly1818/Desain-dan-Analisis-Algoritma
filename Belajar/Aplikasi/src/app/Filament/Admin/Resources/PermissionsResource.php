@@ -16,6 +16,10 @@ class PermissionsResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    // Define the navigation group
+    protected static ?string $navigationGroup = 'Perpustakaan';
+    protected static ?int $navigationSort = 2;
+
     public static function form(Form $form): Form
     {
         return $form

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('Nama Produk');
             $table->decimal('Harga Produk', 10, 2);
-            $table->string('Kategori Produk');
+            $table->enum('Kategori Produk', ['Sepatu', 'Sandal', 'Celana', 'Baju']);
             $table->timestamps();
         });
     }
