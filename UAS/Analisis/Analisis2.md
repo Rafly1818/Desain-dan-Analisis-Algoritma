@@ -1,4 +1,4 @@
-Berdasarkan analisis yang Anda berikan, saya akan menjelaskan **siapa yang bisa mengakses aplikasi** dan **tingkat akses** yang dimiliki oleh setiap peran. Aplikasi ini dirancang untuk digunakan oleh beberapa pihak dengan kebutuhan dan tanggung jawab yang berbeda. Berikut adalah rinciannya:
+Berdasarkan analisis saya, saya akan menjelaskan **siapa yang bisa mengakses aplikasi** dan **tingkat akses** yang dimiliki oleh setiap peran. Aplikasi ini dirancang untuk digunakan oleh beberapa pihak dengan kebutuhan dan tanggung jawab yang berbeda. Berikut adalah rinciannya:
 
 ---
 
