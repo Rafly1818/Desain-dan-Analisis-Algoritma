@@ -17,81 +17,13 @@ Berdasarkan analisis saya, saya akan menjelaskan **siapa yang bisa mengakses apl
 
 ---
 
-### **2. Manajer Proyek**
-**Siapa:**  
-- Karyawan internal yang bertanggung jawab untuk mengelola proyek tertentu.
-- Contoh: Project Manager atau Team Leader.
-
-**Akses:**  
-- **Lihat Data Karyawan**: Melihat daftar karyawan yang terlibat dalam proyek.
-- **Manajemen Tugas**: Menambah, mengedit, dan menghapus tugas dalam proyek yang dikelola.
-- **Lihat Log Aktivitas**: Melihat aktivitas terkait proyek yang dikelola.
-- **Analisis Produktivitas**: Mengakses data produktivitas tim dalam proyek yang dikelola.
-- **Notifikasi**: Menerima notifikasi tentang deadline tugas dan kemajuan proyek.
-
----
-
-### **3. Staff/Karyawan**
-**Siapa:**  
-- Karyawan internal yang terlibat dalam proyek atau tugas tertentu.
-- Contoh: Developer, Designer, atau Staf Administrasi.
-
-**Akses:**  
-- **Lihat Data Proyek**: Melihat daftar proyek yang menjadi tanggung jawabnya.
-- **Lihat Data Tugas**: Melihat daftar tugas yang diberikan kepadanya.
-- **Update Tugas**: Mengupdate status tugas (misalnya: "Sedang Berjalan", "Selesai").
-- **Lihat Log Aktivitas**: Melihat aktivitas yang terkait dengan tugas dan proyek yang diikutinya.
-- **Kalender Kerja**: Mengakses kalender kerja untuk melihat jadwal tugas dan rapat.
-
----
-
-### **4. Klien**
-**Siapa:**  
-- Perusahaan atau individu yang menggunakan layanan Prodactiva Solutions.
-- Contoh: Perusahaan mitra atau pelanggan.
-
-**Akses:**  
-- **Lihat Progress Proyek**: Melihat kemajuan proyek yang sedang dikerjakan untuk klien tersebut.
-- **Lihat Laporan**: Mengakses laporan produktivitas dan hasil proyek.
-- **Komunikasi dengan Tim**: Mengirim pesan atau feedback kepada tim Prodactiva Solutions melalui aplikasi.
-- **Notifikasi**: Menerima notifikasi tentang update proyek dan deadline.
-
----
-
-### **5. Konsultan Produktivitas**
-**Siapa:**  
-- Tim ahli dari Prodactiva Solutions yang bertugas memberikan saran dan pelatihan untuk meningkatkan produktivitas klien.
-
-**Akses:**  
-- **Analisis Data**: Mengakses data produktivitas klien untuk dianalisis.
-- **Buat Rekomendasi**: Memberikan rekomendasi berdasarkan analisis data.
-- **Lihat Log Aktivitas**: Melihat aktivitas terkait proyek klien.
-- **Pelatihan**: Mengakses modul pelatihan dan materi yang akan diberikan kepada klien.
-
----
-
-### **6. Auditor Internal**
-**Siapa:**  
-- Tim internal yang bertugas memeriksa dan memastikan kepatuhan terhadap standar perusahaan.
-
-**Akses:**  
-- **Lihat Log Aktivitas**: Melihat semua aktivitas yang terjadi di sistem.
-- **Analisis Kinerja**: Mengakses data kinerja karyawan dan proyek.
-- **Laporan Audit**: Membuat dan mengakses laporan audit.
-
----
 
 ### **Ringkasan Tingkat Akses**
 | **Peran**               | **Manajemen Karyawan** | **Manajemen Proyek** | **Manajemen Tugas** | **Lihat Log Aktivitas** | **Analisis Produktivitas** | **Notifikasi** | **Kalender Kerja** | **Laporan** |
 |--------------------------|------------------------|----------------------|---------------------|-------------------------|----------------------------|----------------|--------------------|-------------|
 | **Admin**               | ✔️                     | ✔️                   | ✔️                  | ✔️                      | ✔️                         | ✔️             | ✔️                 | ✔️          |
-| **Manajer Proyek**       | ❌                     | ❌                   | ✔️                  | ✔️                      | ✔️                         | ✔️             | ✔️                 | ❌          |
-| **Staff/Karyawan**       | ❌                     | ❌                   | ❌                  | ✔️                      | ❌                         | ✔️             | ✔️                 | ❌          |
-| **Klien**                | ❌                     | ❌                   | ❌                  | ❌                      | ❌                         | ✔️             | ❌                 | ✔️          |
-| **Konsultan Produktivitas** | ❌                  | ❌                   | ❌                  | ✔️                      | ✔️                         | ❌             | ❌                 | ❌          |
-| **Auditor Internal**     | ❌                     | ❌                   | ❌                  | ✔️                      | ✔️                         | ❌             | ❌                 | ✔️          |
+|
 
----
 
 ### **Cara Mengelola Akses**
 1. **Role-Based Access Control (RBAC)**:
@@ -106,3 +38,11 @@ Berdasarkan analisis saya, saya akan menjelaskan **siapa yang bisa mengakses apl
    - Semua aktivitas pengguna dicatat di log aktivitas untuk memastikan transparansi dan keamanan.
 
 ---
+
+**Baru Admin saja loginnya**
+1. Next list update login  
+-Manajer Proyek  
+-Staff/Karyawan  
+-Klien  
+-Konsultan Produktivitas  
+-Auditor Internal
