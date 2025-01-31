@@ -1,0 +1,44 @@
+@startuml
+start
+
+:Login Page;
+if (Cek Role Pengguna?) then (Admin)
+  :Manajemen Karyawan;
+  :Manajemen Proyek;
+  :Manajemen Tugas;
+  :Lihat Log Aktivitas;
+  :Analisis Produktivitas;
+  :Manajemen Pengguna;
+elseif (Manajer Proyek?) then (Manajer Proyek)
+  :Manajemen Tugas;
+  :Lihat Log Aktivitas;
+  :Analisis Produktivitas;
+  :Notifikasi;
+  :Lihat Data Karyawan;
+elseif (Staff?) then (Staff)
+  :Lihat Data Proyek;
+  :Lihat Data Tugas;
+  :Update Tugas;
+  :Lihat Log Aktivitas;
+  :Notifikasi;
+  :Kalender Kerja;
+elseif (Klien?) then (Klien)
+  :Lihat Progress Proyek;
+  :Lihat Laporan;
+  :Komunikasi dengan Tim;
+  :Notifikasi;
+elseif (Konsultan?) then (Konsultan)
+  :Analisis Data;
+  :Buat Rekomendasi;
+  :Lihat Log Aktivitas;
+  :Pelatihan;
+elseif (Auditor?) then (Auditor)
+  :Lihat Log Aktivitas;
+  :Analisis Kinerja;
+  :Laporan Audit;
+endif
+
+:Logout;
+stop
+
+@enduml
