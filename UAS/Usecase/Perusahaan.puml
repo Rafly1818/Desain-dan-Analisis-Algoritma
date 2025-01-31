@@ -1,0 +1,62 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor Admin
+actor "Manajer Proyek" as Manajer
+actor Staff
+actor Klien
+actor "Konsultan Produktivitas" as Konsultan
+actor "Auditor Internal" as Auditor
+
+rectangle "Prodactiva Solutions" {
+  Admin -- (Manajemen Karyawan)
+  Admin -- (Manajemen Proyek)
+  Admin -- (Manajemen Tugas)
+  Admin -- (Lihat Log Aktivitas)
+  Admin -- (Analisis Produktivitas)
+  Admin -- (Manajemen Pengguna)
+
+  Manajer -- (Lihat Data Karyawan)
+  Manajer -- (Manajemen Tugas)
+  Manajer -- (Lihat Log Aktivitas)
+  Manajer -- (Analisis Produktivitas)
+  Manajer -- (Notifikasi)
+
+  Staff -- (Lihat Data Proyek)
+  Staff -- (Lihat Data Tugas)
+  Staff -- (Update Tugas)
+  Staff -- (Lihat Log Aktivitas)
+  Staff -- (Notifikasi)
+  Staff -- (Kalender Kerja)
+
+  Klien -- (Lihat Progress Proyek)
+  Klien -- (Lihat Laporan)
+  Klien -- (Komunikasi dengan Tim)
+  Klien -- (Notifikasi)
+
+  Konsultan -- (Analisis Data)
+  Konsultan -- (Buat Rekomendasi)
+  Konsultan -- (Lihat Log Aktivitas)
+  Konsultan -- (Pelatihan)
+
+  Auditor -- (Lihat Log Aktivitas)
+  Auditor -- (Analisis Kinerja)
+  Auditor -- (Laporan Audit)
+
+  (Manajemen Karyawan) --> (Tambah Karyawan)
+  (Manajemen Karyawan) --> (Edit Karyawan)
+  (Manajemen Karyawan) --> (Hapus Karyawan)
+
+  (Manajemen Proyek) --> (Tambah Proyek)
+  (Manajemen Proyek) --> (Edit Proyek)
+  (Manajemen Proyek) --> (Hapus Proyek)
+
+  (Manajemen Tugas) --> (Tambah Tugas)
+  (Manajemen Tugas) --> (Edit Tugas)
+  (Manajemen Tugas) --> (Hapus Tugas)
+
+  (Lihat Log Aktivitas) --> (Filter Log Aktivitas)
+}
+
+@enduml
